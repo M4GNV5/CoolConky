@@ -1,0 +1,22 @@
+default_color 494a5b
+alignment top_right
+minimum_size 540 350
+maximum_width 540
+gap_x 55
+gap_y 765
+
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_colour 000000
+own_window_argb_value 0
+
+TEXT
+
+╭╴               ╶╮
+    ${color a5adff}GITHUB LOGS${color }
+╰╴               ╶╯
+${color 494a5b}${execi 15 /home/jakob/.conky/githubevents.sh}${color}
+${include /home/jakob/.conky/templeterino.conf}

@@ -1,0 +1,28 @@
+alignment tl
+minimum_size 540 350
+maximum_width 540
+gap_x 55
+gap_y 765
+default_color 494a5b
+color2 d05400
+color3 b30000
+
+imlib_cache_size 0
+use_xft yes
+xftfont monospace:pixelsize=15
+own_window yes
+#own_window_type conky
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 0
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+TEXT
+${include /home/jakob/.conky/templeterino.conf}
+  ╭╴               ╶╮
+       ${color a5adff}SYS LOGS${color }
+  ╰╴               ╶╯
+${execpi 60 tail -n 15 /var/log/messages | cut -c1-90 | awk '{$1=$2=$4=""; print $0}' | sed -e 's/kernel/${color af2445}kernel${color}/' -e 's/root/${color 23ada0}root${color}/'}
+
+
+  UPTIME: ${execi 60 uptime}
